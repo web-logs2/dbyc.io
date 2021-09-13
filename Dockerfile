@@ -30,6 +30,7 @@ RUN mix deps.get --only prod && \
 
 # install npm dependencies
 COPY assets/package.json ./assets/
+RUN npm install -g yarn
 RUN yarn --cwd assets ci
 
 COPY priv priv
