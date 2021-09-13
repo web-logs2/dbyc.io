@@ -30,7 +30,7 @@ RUN mix deps.get --only prod && \
 
 # install npm dependencies
 COPY assets/package.json ./assets/
-RUN yarn ci --cwd ./assets
+RUN yarn --cwd assets ci
 
 COPY priv priv
 COPY assets assets
@@ -41,7 +41,7 @@ COPY assets assets
 # COPY lib lib
 
 # build assets
-RUN yarn deploy --cwd ./assets
+RUN yarn --cwd assets deploy
 RUN mix phx.digest
 
 # copy source here if not using TailwindCSS
