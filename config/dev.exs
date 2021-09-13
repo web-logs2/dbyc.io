@@ -6,6 +6,7 @@ config :dbyc, Dbyc.Repo,
   password: "postgres",
   database: "dbyc_dev",
   hostname: "localhost",
+  port: 55432,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
 
@@ -22,10 +23,7 @@ config :dbyc, DbycWeb.Endpoint,
   check_origin: false,
   watchers: [
     node: [
-      "node_modules/webpack/bin/webpack.js",
-      "--mode",
-      "development",
-      "--watch-stdin",
+      "node_modules/.bin/vite",
       cd: Path.expand("../assets", __DIR__)
     ]
   ]
