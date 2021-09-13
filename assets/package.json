@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "ci": "echo 'ok'",
+    "deploy": "echo 'ok'"
   },
   "dependencies": {
     "react": "^17.0.0",
