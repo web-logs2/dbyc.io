@@ -29,10 +29,6 @@ RUN mix deps.get --only prod && \
     mix deps.compile
 
 # install npm dependencies
-COPY assets/package.json ./assets/
-RUN npm install -g yarn
-RUN yarn --cwd assets ci
-
 COPY priv priv
 COPY assets assets
 
@@ -42,6 +38,9 @@ COPY assets assets
 # COPY lib lib
 
 # build assets
+RUN npm install -g yarn
+RUN yarn --cwd assets install
+RUN yarn --cwd assets ci
 RUN yarn --cwd assets build
 #RUN mix phx.digest
 
