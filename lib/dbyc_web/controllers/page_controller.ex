@@ -2,7 +2,7 @@ defmodule DbycWeb.PageController do
   use DbycWeb, :controller
 
   def index(conn, _params) do
-    env = Mix.env()
+    env = System.get_env("MIX_ENV", "dev")
 
     conn
     |> put_layout(false)
