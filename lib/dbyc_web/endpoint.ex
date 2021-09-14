@@ -24,7 +24,7 @@ defmodule DbycWeb.Endpoint do
     at: "/",
     from: :dbyc,
     gzip: false,
-    only: ~w(css fonts images js favicon.ico robots.txt)
+    only: ~w(assets)
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.

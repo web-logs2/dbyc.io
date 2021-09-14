@@ -13,9 +13,12 @@ defmodule DbycWeb.Router do
     plug :accepts, ["json"]
   end
 
+  scope "/" do
+    forward("/g", ReverseProxyPlug, upstream: "http://localhost:3000/g/")
+  end
+
   scope "/", DbycWeb do
     pipe_through :browser
-
     get "/", PageController, :index
   end
 
