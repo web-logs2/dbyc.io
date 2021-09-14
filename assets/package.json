@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build --mode production --outDir ../priv/static",
+    "build": "tsc && vite build --mode production --emptyOutDir --outDir ../priv/static",
     "serve": "vite preview",
     "ci": "echo 'ok'",
     "deploy": "echo 'ok'"

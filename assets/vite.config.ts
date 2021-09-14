@@ -1,13 +1,16 @@
-import { defineConfig } from 'vite'
-import reactRefresh from '@vitejs/plugin-react-refresh'
+import { defineConfig } from 'vite';
+import reactRefresh from '@vitejs/plugin-react-refresh';
+
+const env = process.env.NODE_ENV;
+console.log('env:', env);
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/g/',
+  base: env === 'production' ? '/' : '/g/',
   build: {
     manifest: true,
     rollupOptions: {
-      input: '/src/main.ts'
+      input: './src/main.tsx'
     }
   },
   server: {
@@ -19,4 +22,5 @@ export default defineConfig({
     }
   },
   plugins: [reactRefresh()]
-})
+});
+

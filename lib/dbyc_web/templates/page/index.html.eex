@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Divide By Code!</title>
+    <%= if @env == :dev do %>
     <script type="module" src="/g/@vite/client"></script>
     <script type="module">
       import RefreshRuntime from '/g/@react-refresh';
@@ -14,10 +15,17 @@
       window.__vite_plugin_react_preamble_installed__ = true;
       window.__VITE_IS_MODERN__ = true;
     </script>
+    <% else %>
+    <link rel="stylesheet" href="<%= assets_path("src/main.tsx", "css") %>" />
+    <% end %>
   </head>
   <body>
     <div id="root"></div>
+    <%= if @env == :dev do %>
     <script type="module" src="/g/src/main.tsx"></script>
+    <% else %>
+    <script type="module" src="<%= assets_path("src/main.tsx", "file") %>"></script>
+    <% end %>
   </body>
 </html>
 

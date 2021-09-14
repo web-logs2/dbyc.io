@@ -14,9 +14,9 @@ defmodule Dbyc.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: Dbyc.PubSub},
       # Start the Endpoint (http/https)
-      DbycWeb.Endpoint
+      DbycWeb.Endpoint,
       # Start a worker by calling: Dbyc.Worker.start_link(arg)
-      # {Dbyc.Worker, arg}
+      DbycWeb.AssetsAgent
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
