@@ -1,12 +1,23 @@
-<script type="module" src="/g/@vite/client"></script>
-<script type="module">
-  import RefreshRuntime from '/g/@react-refresh';
-  RefreshRuntime.injectIntoGlobalHook(window);
-  window.$RefreshReg$ = () => {};
-  window.$RefreshSig$ = () => (type) => type;
-  window.__vite_plugin_react_preamble_installed__ = true;
-  window.__VITE_IS_MODERN__ = true;
-</script>
-<div id="root"></div>
-<script type="module" src="/g/src/main.tsx"></script>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Divide By Code!</title>
+    <script type="module" src="/g/@vite/client"></script>
+    <script type="module">
+      import RefreshRuntime from '/g/@react-refresh';
+      RefreshRuntime.injectIntoGlobalHook(window);
+      window.$RefreshReg$ = () => {};
+      window.$RefreshSig$ = () => (type) => type;
+      window.__vite_plugin_react_preamble_installed__ = true;
+      window.__VITE_IS_MODERN__ = true;
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/g/src/main.tsx"></script>
+  </body>
+</html>
 
