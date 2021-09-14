@@ -24,6 +24,9 @@
     <%= if @env == :dev do %>
     <script type="module" src="/g/src/main.tsx"></script>
     <% else %>
+      <%= for path <- assets_imports("src/main.tsx", "file") do %>
+        <script type="module" src="<%= path %>"></script>
+      <% end %>
     <script type="module" src="<%= assets_path("src/main.tsx", "file") %>"></script>
     <% end %>
   </body>
