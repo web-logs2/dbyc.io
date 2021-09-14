@@ -3,7 +3,6 @@ defmodule DbycWeb.PageController do
 
   def index(conn, _params) do
     env = Mix.env()
-    env = :prod
 
     conn
     |> put_layout(false)
