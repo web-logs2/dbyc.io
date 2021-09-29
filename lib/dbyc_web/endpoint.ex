@@ -7,12 +7,8 @@ defmodule DbycWeb.Endpoint do
   @session_options [
     store: :cookie,
     key: "_dbyc_key",
-    signing_salt: "Y4ykzwyl"
+    signing_salt: "t5cGCc2Y"
   ]
-
-  socket "/socket", DbycWeb.UserSocket,
-    websocket: true,
-    longpoll: false
 
   socket "/live", Phoenix.LiveView.Socket, websocket: [connect_info: [session: @session_options]]
 
@@ -24,7 +20,7 @@ defmodule DbycWeb.Endpoint do
     at: "/",
     from: :dbyc,
     gzip: false,
-    only: ~w(assets)
+    only: ~w(assets fonts images favicon.ico robots.txt)
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
