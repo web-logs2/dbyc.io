@@ -38,10 +38,8 @@ COPY assets assets
 # COPY lib lib
 
 # build assets
-#RUN npm install -g yarn
-#RUN yarn --cwd assets install
-#RUN yarn --cwd assets ci
-#RUN yarn --cwd assets build
+RUN npm install -g yarn
+RUN yarn --cwd assets install
 RUN mix assets.deploy
 
 # copy source here if not using TailwindCSS
