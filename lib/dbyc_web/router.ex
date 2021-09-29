@@ -1,5 +1,6 @@
 defmodule DbycWeb.Router do
   use DbycWeb, :router
+  import Phoenix.LiveView.Router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -18,6 +19,8 @@ defmodule DbycWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+
+    live "/counter", CounterLive
   end
 
   # Other scopes may use custom stacks.
