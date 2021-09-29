@@ -42,7 +42,7 @@ COPY assets assets
 #RUN yarn --cwd assets install
 #RUN yarn --cwd assets ci
 #RUN yarn --cwd assets build
-#RUN mix phx.digest
+RUN mix phx.digest
 
 # copy source here if not using TailwindCSS
 COPY lib lib
