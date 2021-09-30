@@ -3,7 +3,7 @@ defmodule DbycWeb.CounterLive do
 
   def render(assigns) do
     ~H"""
-    Current <%= @temperature %>
+    <div><%= @time %></div>
     """
   end
 
@@ -12,14 +12,17 @@ defmodule DbycWeb.CounterLive do
       Process.send_after(self(), :update, 1000)
     end
 
-    temperature = 100
-    {:ok, assign(socket, :temperature, temperature)}
+    {:ok, assign(socket, time: now())}
   end
 
   def handle_info(:update, socket) do
     Process.send_after(self(), :update, 1000)
-    last = socket.assigns[:temperature]
-    IO.inspect(last)
-    {:noreply, assign(socket, :temperature, last + 1)}
+    time = now()
+    {:noreply, assign(socket, time: time, page_title: "current time: #{time}")}
+  end
+
+  defp now() do
+    %{hour: hour, minute: minute, second: second} = DateTime.now!("Asia/Shanghai")
+    "#{hour}:#{minute}:#{second}"
   end
 end
