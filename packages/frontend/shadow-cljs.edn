@@ -3,7 +3,7 @@
  ["src"]
 
  :dependencies
- []
+ [[hicada "0.1.9"]]
 
  :dev-http {8080 "public"}
 

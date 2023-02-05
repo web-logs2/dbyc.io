@@ -6,8 +6,18 @@
     "shadow-cljs": "2.20.20"
   },
   "dependencies": {
+    "@emotion/cache": "^11.10.5",
+    "@emotion/css": "^11.10.5",
+    "@emotion/hash": "^0.9.0",
+    "@emotion/memoize": "^0.8.0",
+    "@emotion/serialize": "^1.1.1",
+    "@emotion/sheet": "^1.2.1",
+    "@emotion/unitless": "^0.8.0",
+    "@emotion/utils": "^1.2.0",
+    "@emotion/weak-memoize": "^0.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "scheduler": "^0.23.0"
+    "scheduler": "^0.23.0",
+    "stylis": "^4.1.3"
   }
 }
